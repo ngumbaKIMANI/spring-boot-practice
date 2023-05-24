@@ -17,11 +17,10 @@ public class Main {
 
     @GetMapping("/")
     public GreetResponse greet() {
-        GreetResponse greetResponse = new GreetResponse(
+        return new GreetResponse(
                 "Hello world!",
                 List.of("Java", "Kotlin", "Scala"),
                 new Person("Ngumba", 25, 10_000.00));
-        return greetResponse;
     }
 
    record GreetResponse(String greet, List<String> favProgrammingLanguages, Person person){}
