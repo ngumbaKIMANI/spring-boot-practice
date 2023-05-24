@@ -20,13 +20,13 @@ public class Main {
         GreetResponse greetResponse = new GreetResponse(
                 "Hello world!",
                 List.of("Java", "Kotlin", "Scala"),
-                new Person("Ngumba", 25));
+                new Person("Ngumba", 25, 10_000.00));
         return greetResponse;
     }
 
    record GreetResponse(String greet, List<String> favProgrammingLanguages, Person person){}
 
-   record Person(String name, int age){ }
+   record Person(String name, int age, double salary){ }
 
    /* class GreetResponse{
         private final String greet;
