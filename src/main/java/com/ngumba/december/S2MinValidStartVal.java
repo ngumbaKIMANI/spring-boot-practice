@@ -1,4 +1,4 @@
-package com.ngumba.november.december;
+package com.ngumba.december;
 
 public class S2MinValidStartVal {
 
