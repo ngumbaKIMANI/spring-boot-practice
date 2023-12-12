@@ -86,7 +86,7 @@ class IPO {
     }
 }
 
-class Solution1 {
+class S12Solution1 {
     public int findLeastNumOfUniqueInts(int[] arr, int k) {
         Map<Integer, Integer> counts = new HashMap<>();
         for (int num : arr) {
@@ -111,24 +111,24 @@ class Solution1 {
 
         return ordered.size();
     }
+}
 
-    class Solution2 {
-        public int numRescueBoats(int[] people, int limit) {
-            int ans = 0;
-            int i = 0;
-            int j = people.length - 1;
-            Arrays.sort(people);
+class S12Solution2 {
+    public int numRescueBoats(int[] people, int limit) {
+        int ans = 0;
+        int i = 0;
+        int j = people.length - 1;
+        Arrays.sort(people);
 
-            while (i <= j) {
-                if (people[i] + people[j] <= limit) {
-                    i++;
-                }
-
-                j--;
-                ans++;
+        while (i <= j) {
+            if (people[i] + people[j] <= limit) {
+                i++;
             }
 
-            return ans;
+            j--;
+            ans++;
         }
+
+        return ans;
     }
 }

@@ -52,10 +52,10 @@ public class S12Heaps {
     public static void main(String[] args) {
         //heapPlayground();
         int[] stones = {2, 7, 4, 1, 8, 1};
-        System.out.println(Solution.lastStoneWeight(stones));
+        System.out.println(S12Solution.lastStoneWeight(stones));
     }
-
-    static class Solution {
+}
+    class S12Solution {
         public static int lastStoneWeight(int[] stones) {
             PriorityQueue<Integer> heap = new PriorityQueue<>(Comparator.reverseOrder());
             for (int stone : stones) {
@@ -74,7 +74,7 @@ public class S12Heaps {
         }
     }
 
-    static class Solution2 {
+    class S12HalveArray {
         public static int halveArray(int[] nums) {
             double target = 0;
             PriorityQueue<Double> heap = new PriorityQueue<>(Comparator.reverseOrder());
@@ -119,7 +119,7 @@ public class S12Heaps {
         }
     }
 
-    class Solution4 {
+    class S12Solution4 {
         public int[] topKFrequent(int[] nums, int k) {
             Map<Integer, Integer> counts = new HashMap<>();
             for (int num : nums) {
@@ -143,7 +143,7 @@ public class S12Heaps {
         }
     }
 
-    class Solution5 {
+    class S12Solution5 {
         public List<Integer> findClosestElements(int[] arr, int k, int x) {
             PriorityQueue<Integer> heap = new PriorityQueue<>((n1, n2) -> {
                 if (Math.abs(n1 - x) == Math.abs(n2 - x)) {
@@ -169,4 +169,3 @@ public class S12Heaps {
             return ans;
         }
     }
-}
