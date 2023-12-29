@@ -14,11 +14,36 @@ public class S11GraphsDFS {
                 {'1', '1', '0', '0', '0'},
                 {'0', '0', '0', '0', '0'}
         };
-        Solution2 s2 = new Solution2();
+        NumberOfIslandsGivenGrid s2 = new NumberOfIslandsGivenGrid();
         System.out.println(s2.numIslands(grid));
     }
 
-    static class Solution1 {
+    static class NumberOfConnectecdCompGivenAdjMatrix2 {
+        public int findCircleNum(int[][] isConnected) {
+            int n = isConnected.length;
+            int numberOfComponents = 0;
+            boolean[] visit = new boolean[n];
+
+            for (int i = 0; i < n; i++) {
+                if (!visit[i]) {
+                    numberOfComponents++;
+                    dfs(i, isConnected, visit);
+                }
+            }
+
+            return numberOfComponents;
+        }
+
+        public void dfs(int node, int[][] isConnected, boolean[] visit) {
+            visit[node] = true;
+            for (int i = 0; i < isConnected.length; i++) {
+                if (isConnected[node][i] == 1 && !visit[i]) {
+                    dfs(i, isConnected, visit);
+                }
+            }
+        }
+    }
+    static class NumberOfConnectecdCompGivenAdjMatrix {
         Map<Integer, List<Integer>> graph = new HashMap<>();
         boolean[] seen;
 
@@ -65,7 +90,7 @@ public class S11GraphsDFS {
         }
     }
 
-    static class Solution2 {
+    static class NumberOfIslandsGivenGrid {
         int m;
         int n;
         int[][] directions = new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}};

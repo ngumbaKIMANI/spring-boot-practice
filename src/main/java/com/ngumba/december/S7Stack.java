@@ -43,6 +43,33 @@ public class S7Stack {
         return stack.toString();
     }
 
+    public static String removeKuplicates(String s, int k) {
+        StringBuilder stack = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            if (!stack.isEmpty() && checkKConsecutive(stack, k, c)) {
+                for (int i = 1; i <= k - 1; i++) {
+                    int index = stack.length() - i;
+                    if (index >= 0 )
+                    stack.deleteCharAt(stack.length() - i);
+                }
+            } else {
+                stack.append(c);
+            }
+        }
+
+        return stack.toString();
+    }
+
+    static boolean checkKConsecutive(StringBuilder stack, int k, char curr) {
+        for (int i = 1; i <= k - 1; i++) {
+            int index = stack.length() - i;
+            if (index >= 0 && stack.charAt(index) == curr) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
     public static String simplifyPath(String path) {
 
@@ -173,6 +200,36 @@ public class S7Stack {
 
     public static void main(String[] args) {
         //System.out.println(removeDuplicates("abbaca"));
-        System.out.println(makeGood("leEeetcode"));
+        // System.out.println(makeGood3("leEeetcode"));
+        //System.out.println(removeKChars("abbaca", 2));
+        //System.out.println(removeKChars("aaabbbcc", 3)); // Output: "cc"
+        //System.out.println(removeKChars("deeedbbcccbdaa", 3)); // Output: "aa"
+        System.out.println(removeKuplicates("aaabbbcccxxx", 3));
     }
+
+    public static String removeKChars(String s, int k) {
+        StringBuilder stack = new StringBuilder();
+        int count = 0;
+
+        for (char c : s.toCharArray()) {
+            if (!stack.isEmpty() && stack.charAt(stack.length() - 1) == c) {
+                count++;
+            } else {
+                count = 1; // Reset the count for a new character
+            }
+
+            stack.append(c);
+
+            if (count == k) {
+                // Remove the last K characters from the stack
+                for (int i = 0; i < k; i++) {
+                    stack.deleteCharAt(stack.length() - 1);
+                }
+                count = 0; // Reset the count after removing K characters
+            }
+        }
+
+        return stack.toString();
+    }
+
 }
