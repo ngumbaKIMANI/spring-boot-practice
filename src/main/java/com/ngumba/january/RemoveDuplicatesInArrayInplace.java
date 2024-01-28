@@ -14,13 +14,13 @@ public class RemoveDuplicatesInArrayInplace {
     }
 
     public static void main(String[] args) {
-        int[] inputArray = {1,1,1,0,2,2,3};
-        int uniqueOrderedArray = getUniqueOrderedElements(inputArray);
+        int[] inputArray = {1, 1, 1, 0, 2, 2, 3};
+
 
         // Print the result
         System.out.print("Unique Ordered Elements: ");
-        for (int element : uniqueOrderedArray) {
-            System.out.print(element + " ");
-        }
+
+        System.out.print(getUniqueOrderedElements(inputArray));
+
     }
 }
