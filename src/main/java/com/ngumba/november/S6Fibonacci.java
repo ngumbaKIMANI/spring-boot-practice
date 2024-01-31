@@ -2,7 +2,7 @@ package com.ngumba.november;
 
 import java.util.Scanner;
 
-public class Solution6 {
+public class S6Fibonacci {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

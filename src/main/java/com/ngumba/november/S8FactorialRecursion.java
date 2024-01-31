@@ -1,7 +1,7 @@
 package com.ngumba.november;
 
 
-public class Solution8 {
+public class S8FactorialRecursion {
     static int factorial(int n) {
         if (n == 1) {
             return 1;

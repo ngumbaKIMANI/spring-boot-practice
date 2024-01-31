@@ -72,6 +72,17 @@ public class DS2Arrays {
         }
     }
 
+    public static void testLoop() {
+        int[] arr = new int[]{0, 1};
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j < arr.length; j++) {
+                System.out.print("* ");
+
+            }
+            System.out.println(" ");
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println(arraySum());
         System.out.println(charArray());
@@ -85,7 +96,9 @@ public class DS2Arrays {
                 {'A', 'D', 'E', 'E'}
         };
         String word = "ABCCED";
-        System.out.println(wordSearch.exist(board, word)); // Should print true
+        System.out.println(wordSearch.exist(board, word)); // Should print true;
+        System.out.println("________________");
+        testLoop();
 
     }
 
@@ -116,7 +129,7 @@ public class DS2Arrays {
         int m = board.length;
         int n = board[0].length;
 
-        if ( i < 0 ||
+        if (i < 0 ||
                 i >= m ||
                 j < 0 ||
                 j >= n ||
@@ -129,9 +142,9 @@ public class DS2Arrays {
 
         // Check adjacent cells
         boolean found = deepFirstSearch(board, i + 1, j, word, index + 1) ||
-                        deepFirstSearch(board, i - 1, j, word, index + 1) ||
-                        deepFirstSearch(board, i, j + 1, word, index + 1) ||
-                        deepFirstSearch(board, i, j - 1, word, index + 1);
+                deepFirstSearch(board, i - 1, j, word, index + 1) ||
+                deepFirstSearch(board, i, j + 1, word, index + 1) ||
+                deepFirstSearch(board, i, j - 1, word, index + 1);
 
         board[i][j] = temp; // Backtrack: restore the original character
 
