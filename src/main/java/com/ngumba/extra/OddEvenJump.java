@@ -1,4 +1,4 @@
-package com.ngumba;
+package com.ngumba.extra;
 
 import java.util.Map;
 import java.util.TreeMap;

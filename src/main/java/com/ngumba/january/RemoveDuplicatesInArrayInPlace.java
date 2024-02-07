@@ -1,6 +1,6 @@
 package com.ngumba.january;
 
-public class RemoveDuplicatesInArrayInplace {
+public class RemoveDuplicatesInArrayInPlace {
 
     public static int getUniqueOrderedElements(int[] nums) {
         int j = 1;

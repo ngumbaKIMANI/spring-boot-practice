@@ -37,9 +37,11 @@ class ReverseStringII {
 
 class SubstringExample {
     public static void main(String args[]) {
-        String s1 = "JAMES KIMANI";
+        String s1 = "vatpoint";
         System.out.println(s1.substring(2, 4));//returns va
-        System.out.println(s1.substring(1));//returns vatpoint
+        String s2 = "vatpoint";
+        System.out.println(s2.substring(1));//returns vatpoint
+        System.out.println(s2.charAt(0));
     }
 }
 

@@ -1,13 +1,9 @@
 package com.ngumba.october;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class Java8Streams {
-
-    public static void main(String[] args) {
+    private static void testStreams() {
         List<String> countriesList = new ArrayList<>();
 
         countriesList.add("Kenya");
@@ -62,6 +58,39 @@ public class Java8Streams {
 
         Integer[] arr = intList.toArray(new Integer[0]);
         List<Integer> newIntList = Arrays.asList(arr);
+    }
+
+    private static void sortingArrays() {
+        int[] arr1 = {1, 9, 0, 4, 1};
+        Arrays.sort(arr1);
+        System.out.println(Arrays.toString(arr1));
+
+        int[][] arr2 = {{10, 2}, {1, 4}, {0, 4}, {4, 6}, {8, 0}};
+        Arrays.sort(arr2, (a, b) -> a[0] - b[0]);
+        System.out.println(Arrays.deepToString(arr2));
+
+        int[][] arr21 = {{10, 2}, {1, 4}, {0, 4}, {4, 6}, {8, 0}};
+        Arrays.sort(arr21, (a, b) -> b[0] - a[0]);
+        System.out.println(Arrays.deepToString(arr21));
+
+        int[][] arr3 = {{10, 2}, {1, 4}, {0, 4}, {4, 6}, {8, 0}};
+        Arrays.sort(arr3, (a, b) -> a[1] - b[1]);
+        System.out.println(Arrays.deepToString(arr3));
+
+        int[][] arr4 = {{1, 2}, {3, 4}, {5, 9}};
+        Arrays.sort(arr4, Comparator.comparingInt(a -> a[0]));
+        System.out.println(Arrays.deepToString(arr4));
+
+        int[][] arr5 = {{1, 2}, {3, 4}, {5, 9}};
+        Arrays.sort(arr5, Comparator.comparingInt((int[] a) -> a[0]).reversed());
+        System.out.println(Arrays.deepToString(arr5));
+
+
+    }
+
+    public static void main(String[] args) {
+        //testStreams();
+        sortingArrays();
 
 
     }

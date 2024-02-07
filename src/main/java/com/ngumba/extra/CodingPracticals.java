@@ -1,4 +1,4 @@
-package com.ngumba;
+package com.ngumba.extra;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -24,6 +24,8 @@ public class CodingPracticals {
             // Sort the array
             Arrays.sort(nums);
             int n = nums.length;
+
+
 
             // Initialize the minDiff with the maximum possible integer value
             int minDiff = Integer.MAX_VALUE;

@@ -1,4 +1,4 @@
-package com.ngumba;
+package com.ngumba.extra;
 
 
 public class BSTDeleteNode {
@@ -32,7 +32,7 @@ public class BSTDeleteNode {
         }
     }
 
-    public TreeNode deleteBST(TreeNode root, int key) {
+    private TreeNode deleteBST(TreeNode root, int key) {
         // Base case: If the tree is empty
         if (root == null) {
             return null;

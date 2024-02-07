@@ -1,9 +1,9 @@
 package com.ngumba.january;
 
 public class Node<T> {
-    T val;
-    Node<T> left;
-    Node<T> right;
+    public T val;
+    public Node<T> left;
+    public Node<T> right;
 
     public Node(T val) {
         this.val = val;
