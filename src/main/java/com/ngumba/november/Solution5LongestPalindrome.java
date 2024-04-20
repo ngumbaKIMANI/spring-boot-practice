@@ -30,7 +30,8 @@ class Solution5LongestPalindrome {
     }
 
     public static void main(String[] args) {
-        System.out.println(longestPalindrome("ono"));
+        System.out.println(longestPalindrome("badbad"));
+
     }
 
     public String longestPalindrome2(String s) {

@@ -3,9 +3,9 @@ package com.ngumba.november;
 
 import java.util.Scanner;
 
-public class Solution2 {
+class IsAnagram {
 
-    static boolean isAnagram(String a, String b) {
+    static boolean S2isAnagram(String a, String b) {
         // Complete the function
         a = a.toLowerCase();
         b = b.toLowerCase();
@@ -44,7 +44,7 @@ public class Solution2 {
         String a = scan.next();
         String b = scan.next();
         scan.close();
-        boolean ret = isAnagram(a, b);
+        boolean ret = S2isAnagram(a, b);
         System.out.println((ret) ? "Anagrams" : "Not Anagrams");
     }
 }
